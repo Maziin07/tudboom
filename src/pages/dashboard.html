@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudboom Dashboard</title>
+    <link rel="stylesheet" href="/src/styles/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="/assets/imagens/logo.png" class="logo" height="90px">
+                <div>
+                    <h1>Tudboom Dashboard</h1>
+                    <p>Gerencie seus produtos de forma simples e eficiente</p>
+                </div>
+                <div style="margin-left: auto; margin-right: auto;">
+                    <a href="/index.html" class="nav-link" style="margin-left: 160px;">Início</a>
+                    <a href="/src/pages/emissor.html" class="btn-emissor">Emissor NF</a>
+                </div>
+            </div>
+            <div class="header-info">
+                <span>Total de produtos: <strong id="total-count">6</strong></span>
+                <button class="btn-primary" onclick="openModal()">
+                    <i class="fas fa-plus"></i> Adicionar Produto
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Cards -->
+    <section class="stats">
+        <div class="container">
+            <div class="card">
+                <h3>Total de Produtos</h3>
+                <div class="stat-value" id="products-count">6</div>
+                <small id="products-shown">6 exibidos</small>
+            </div>
+            <div class="card">
+                <h3>Valor Total do Estoque</h3>
+                <div class="stat-value green" id="total-value">R$ 13.599,94</div>
+                <i class="fas fa-filter filter-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Buscar produtos..." oninput="filterProducts()">
+            </div>
+            <span class="results-count" id="results-count">6 de 6 produtos</span>
+        </div>
+    </section>
+
+    <!-- Products Table -->
+    <section class="products-section">
+        <div class="container">
+            <div class="table-container">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Preço</th>
+                            <th>Criado em</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-tbody">
+                        <!-- Products will be rendered here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+        <!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modal-title">Adicionar Produto</h2>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+        </div>
+        <form id="product-form" onsubmit="saveProduct(event)">
+            <div class="modal-form-content">
+                <div class="form-group">
+                    <label>Nome do Produto</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea id="product-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <select id="product-category" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Louça">☕ Louça</option>
+                        <option value="Escrita e Correção">🖊️ Escrita e Correção</option>
+                        <option value="Cadernos e Papeis">📓 Cadernos e Papeis</option>
+                        <option value="Equipamento Escolar e Escritório">📑 Equipamento Escolar e Escritório</option>
+                        <option value="Personalizado">🎨 Personalizado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preço (R$)</label>
+                    <input type="number" id="product-price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Imagem do Produto</label>
+                    <input type="file" id="product-image" accept="image/*" required>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" onclick="closeModal()">Cancelar</button>
+                <button type="submit" class="btn-primary">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script src="/src/scripts/dashboard.js"></script>
+</body>
+</html>

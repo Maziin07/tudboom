@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudboom - Produtos Personalizados Únicos</title>
+    <meta name="description" content="Tudboom - Loja de produtos personalizados únicos. Canecas, roupas, decoração e acessórios com design exclusivo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/catalogo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo -->
+            <div class="logo-section">
+                <div class="logo">
+                    <h1>
+                        <a href="/index.html">
+                            <img src="/assets/imagens/logo.png" alt="Logo Tudboom" style="height: 75px;">
+                        </a>
+                    </h1>
+                </div>
+            </div>
+
+             <!-- Navigation -->
+                <nav class="nav desktop-only">
+                    <a href="/index.html" class="nav-link" style="margin-left: 30px;">Início</a>
+                    <a href="/src/pages/catalogo.html" class="nav-link">Catálogo de Produtos</a>
+                    <a href="/src/pages/quemsomos.html" class="nav-link">Quem Somos</a>
+                    <a href="/src/pages/loginadm.html" class="nav-link">Login</a>
+                </nav>
+
+                
+        </div>
+    </header>
+        <!-- Header -->
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Category Filter -->
+            <section class="category-section" id="categories">
+                <h3 class="section-title">Categorias</h3>
+                <div class="category-filters" id="categoryFilters">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products-section">
+                <div class="products-header">
+                    <h2 class="products-title" id="productsTitle">Todos os Produtos</h2>
+                    <div class="products-count" id="productsCount">0 produtos</div>
+                </div>
+
+                <!-- 🔍 Campo de busca -->
+                <div class="search-box" style="margin: 15px 0; text-align: center;">
+                    <input type="text" id="searchInput" placeholder="Buscar produto pelo nome"
+                        style="padding: 10px; width: 60%; max-width: 400px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;">
+                </div>
+
+                <div class="products-grid" id="catalogo">
+                    <!-- Products will be populated by JavaScript -->
+                </div>
+                <div class="no-products" id="noProducts" style="display: none;">
+                    <div class="no-products-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+                            <path d="M3 6h18"/>
+                            <path d="M16 10a4 4 0 0 1-8 0"/>
+                        </svg>
+                    </div>
+                    <h3>Nenhum produto encontrado</h3>
+                    <p id="noProductsText">Não encontramos produtos para sua busca</p>
+                    <button class="btn btn-outline" onclick="clearFilters()">Ver Todos os Produtos</button>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact-section" id="contact">
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="contact-text">Tem alguma dúvida ou pedido especial? Estamos aqui para ajudar!</p>
+                <a href="https://wa.me/15991437257" class="btn btn-primary">Falar Conosco</a>
+            </section>
+        </div>
+    </main>
+
+   <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+              <div class="logo-icon">
+                  <img src="/assets/imagens/logo.png" alt="Logo Tudboom" style="height: 50px;">
+                </div>
+            <h3>Tudboom</h3>
+            </div>
+          <p class="footer-description"></p>
+          <div class="footer-links">
+            <a href="/src/pages/quemsomos.html" class="footer-link">Políticas de Privacidade</a>
+            <a href="#" class="footer-link">Termos de Uso</a>
+            <a href="/src/pages/loginadm.html" class="footer-link">Login</a>
+          </div>
+          <div class="social-icons">
+        <a href="https://www.instagram.com/tudboom_/" target="_blank" aria-label="Instagram">
+             <img src="/assets/imagens/instagram.png" alt="Instagram">
+            </a>
+        <a href="https://www.facebook.com/tudbooom/" target="_blank" aria-label="Facebook">
+             <img src="/assets/imagens/facebook1.png" alt="Facebook">
+            </a>
+       <a href="https://wa.me/15991437257" target="_blank" aria-label="WhatsApp">
+             <img src="/assets/imagens/whatsappp.png" alt="WhatsApp">
+            </a>
+        <a href="https://shopee.com.br/tudboom" target="_blank" aria-label="Shopee">
+             <img src="/assets/imagens/shoppe.webp" alt="Shopee">
+            </a>
+           </div>
+          <div class="footer-bottom">
+            © 2025 Tudboom. Todos os direitos reservados.
+          </div>
+       </div>
+    </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="/src/scripts/catalogo.js"></script>
+</body>
+</html>
